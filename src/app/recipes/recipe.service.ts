@@ -13,7 +13,7 @@ export class RecipeService {
         new Ingredient('meat', 1),
         new Ingredient('French Fries', 20)
       ]),
-    new Recipe('Big Fat Burdger', 'What else  you need to say?', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+    new Recipe('Big Fat Burger', 'What else  you need to say?', 'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
       [
         new Ingredient('Buns', 2),
         new Ingredient('Meat', 1)
@@ -24,6 +24,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number) {
+    return this.recipes[id];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
