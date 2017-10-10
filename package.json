@@ -12,6 +12,9 @@
     "postinstall": "ng build --aot -prod",
     "deploy": "git push heroku master"
   },
+  "engines" : {
+    "node": "8.2.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.2.4",
