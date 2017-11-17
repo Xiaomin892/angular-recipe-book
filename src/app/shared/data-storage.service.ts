@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpRequest } from '@angular/common/http';
 import 'rxjs/Rx';
 
-import { RecipeService } from '../recipes/recipe.service';
-import { Recipe } from '../recipes/recipe.model';
-import { AuthService } from '../auth/auth.service';
+import { RecipeService } from '../features/recipes/recipe.service';
+import { Recipe } from '../features/recipes/recipe.model';
+import { AuthService } from '../features/auth/auth.service';
 
 @Injectable()
 export class DataStorageService {
