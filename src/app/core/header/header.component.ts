@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
               public authService: AuthService,
               private router: Router,
               private store: Store<fromApp.AppState>) {}
+
   ngOnInit() {
     this.authState = this.store.select('auth');
   }
