@@ -9,43 +9,33 @@ export class AuthService {
   constructor(private router: Router) {
   }
 
-  signupUser(email: string, password: string) {
+  public signupUser(email: string, password: string): void {
     firebase.auth().createUserWithEmailAndPassword(email, password)
-      .catch(
-        (error) => console.log(error)
-      )
+      .catch((error) => console.log(error));
   }
 
-  signinUser(email: string, password: string) {
+  public signinUser(email: string, password: string): void {
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(
-        response => {
+      .then(response => {
           this.router.navigate(['/']);
           firebase.auth().currentUser.getToken()
-            .then(
-              (token: string) => this.token = token
-            )
-        }
-      )
-      .catch(
-        error => console.log(error)
-      );
+            .then((token: string) => this.token = token);
+        })
+      .catch(error => console.log(error));
   }
 
-  logOut() {
+  public logOut(): void {
     firebase.auth().signOut();
     this.token = null;
   }
 
-  getToken() {
+  public getToken(): string {
     firebase.auth().currentUser.getToken()
-      .then(
-        (token: string) => this.token = token
-      );
-    return this.token;
+      .then((token: string) => this.token = token);
+      return this.token;
   }
 
-  isAuthenticated() {
+  public isAuthenticated(): boolean {
     return this.token != null;
   }
 
